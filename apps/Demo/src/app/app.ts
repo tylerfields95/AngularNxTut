@@ -1,13 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { RouterOutlet } from '@angular/router';
+// importing the component from the library
+import { Hero } from '@acme/ui';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
   selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrl: './app.scss',
+  standalone: true,
+  imports: [RouterOutlet, Hero],
+  template: `
+    <lib-hero 
+      (ctaClick)="handleClick()"
+      title="Welcmoe demo"
+      subtitle="Build something amazing today"
+      cta="Get Started"
+    ></lib-hero>
+  `,
 })
 export class App {
-  protected title = 'Demo';
+  public handleClick(): void {
+    console.log("clicked");
+  }
 }

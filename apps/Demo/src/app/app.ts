@@ -10,7 +10,7 @@ import { Hero } from '@acme/ui';
   template: `
     <lib-hero 
       (ctaClick)="handleClick()"
-      title="Welcmoe demo"
+      title="Welcome demo"
       subtitle="Build something amazing today"
       cta="Get Started"
     ></lib-hero>
